@@ -1,6 +1,7 @@
 import { Facebook, Instagram, Twitter } from "@mui/icons-material";
-import { Divider, Drawer, useTheme, List, ListItem, ListItemText, IconButton } from "@mui/material";
+import { Divider, Drawer, useTheme, List, ListItem, ListItemText, IconButton, useMediaQuery } from "@mui/material";
 import {Box} from "@mui/system";
+import { useDrawerContext } from "../../contexts";
 
 interface IMenuLateralprops {
     children: React.ReactNode;
@@ -8,14 +9,11 @@ interface IMenuLateralprops {
 
 export const MenuLateral: React.FC<IMenuLateralprops> = ({children})=>{
     const theme = useTheme();
-
+    const smDown = useMediaQuery(theme.breakpoints.down('sm'));
+    const {isDrawerOpen, toggleDrawerOpen} = useDrawerContext();
     return (
-        <>
-  <Box
-    display="flex"
-    height="100vh"
-  >
-    <Drawer variant="permanent">
+    <>
+    <Drawer open ={isDrawerOpen} variant={smDown ? 'temporary' : 'permanent'} onClose={toggleDrawerOpen}>
       <Box width={theme.spacing(46)} height="100%" display="flex" flexDirection="column"
         style={{
             backgroundColor: 'rgba(96, 79, 79, 0.3)',
@@ -79,7 +77,6 @@ export const MenuLateral: React.FC<IMenuLateralprops> = ({children})=>{
       {/* Conteúdo principal (children) aqui */}
       {children}
     </Box>
-  </Box>
 </>
     );
 };

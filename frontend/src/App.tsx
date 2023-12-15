@@ -4,6 +4,7 @@ import { ThemeProvider } from "@emotion/react";
 import { PrincipalTheme } from "./shared/themes";
 import { Box } from "@mui/material";
 import { MenuLateral } from "./shared/components";
+import { DrawerProvider } from "./shared/contexts";
 
 export const App = ()=> {
   return (
@@ -16,11 +17,13 @@ export const App = ()=> {
         backgroundPosition: 'center',
     }}>
       <ThemeProvider theme={PrincipalTheme}>
-        <BrowserRouter>
-        <MenuLateral>
-           <AppRoutes/>
-        </MenuLateral>
-        </BrowserRouter>
+        <DrawerProvider>
+          <BrowserRouter>
+          <MenuLateral>
+            <AppRoutes/>
+          </MenuLateral>
+          </BrowserRouter>
+        </DrawerProvider>
       </ThemeProvider>
     </Box>
   );
