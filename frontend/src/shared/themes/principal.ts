@@ -6,17 +6,17 @@ export const PrincipalTheme = createTheme({
             main: '#604F4F',
             dark: '#604F4F',
             light: '#604F4F',
-            contrastText: '#FFE500',
+            contrastText: '#FFE500'
         },
         secondary: {
             main: '#FF1C1C',
-            dark: 'A0FF66',
+            dark: '#DC1111',
             light: '#604F4F',
-            contrastText: '#ffffff',
+            contrastText: '#ffffff'
         },
         background: {
-            default: '#F0F0F0' ,
-            paper: '#ffffff',
+            default: 'F0F0F0' ,
+            paper: 'ffffff'
         }
     }
 });
