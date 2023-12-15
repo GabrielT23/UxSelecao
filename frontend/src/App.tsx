@@ -3,6 +3,7 @@ import { AppRoutes } from "./routes";
 import { ThemeProvider } from "@emotion/react";
 import { PrincipalTheme } from "./shared/themes";
 import { Box } from "@mui/material";
+import { MenuLateral } from "./shared/components";
 
 export const App = ()=> {
   return (
@@ -16,7 +17,9 @@ export const App = ()=> {
     }}>
       <ThemeProvider theme={PrincipalTheme}>
         <BrowserRouter>
-          <AppRoutes/>
+        <MenuLateral>
+           <AppRoutes/>
+        </MenuLateral>
         </BrowserRouter>
       </ThemeProvider>
     </Box>
