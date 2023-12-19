@@ -1,10 +1,19 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Box } from "@mui/material";
-import { Carrinho } from "../pages";
+import { CarrinhoPizza } from "../pages";
+import { CarrinhoBebida } from "../pages/carrinho/CarrinhoBebida";
+import { CarrinhoPetisco } from "../pages/carrinho/CarrinhoPetisco";
+import { CarrinhoSobremesa } from "../pages/carrinho/CarrinhoSobremesa";
+import { Login } from "../pages/formularios/Login";
+
 export const AppRoutesCarrinho = () => {
     return(
         <Routes>
-            <Route path="/" element={<Carrinho/>}/>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/sobremesa" element={<CarrinhoSobremesa/>}/>
+            <Route path="/petisco" element={<CarrinhoPetisco/>}/>
+            <Route path="/bebida" element={<CarrinhoBebida/>}/>
+            <Route path="/pizza" element={<CarrinhoPizza/>}/>
             <Route path="*" element={<Navigate to="/app/home"/>}/>
         </Routes>
     );

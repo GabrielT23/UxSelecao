@@ -11,7 +11,7 @@ const Produto: React.FC<IProdutoprops> = ({nome, valor}) => {
         <Box display="flex" marginLeft={theme.spacing(3)} justifyContent="space-between">
             <Box marginTop={theme.spacing(1)}>
                 <Typography color="black" style={{ fontSize: "15px", fontWeight: "bold" }}>
-                     {nome} -----------------------------------
+                     {nome}
                 </Typography>
                 </Box>
             <Box marginRight={theme.spacing(1)} marginTop={theme.spacing(1)}>
@@ -38,15 +38,14 @@ export const CardCarrinho = () => {
                 </Box>
             <Box marginRight={theme.spacing(1)} marginTop={theme.spacing(1)}>
                 <Typography color="black" style={{ fontSize: "24px", fontWeight: "bold" }}>
-                    R$ 23,00
+                    R$ 39,00
                 </Typography>
             </Box>
         </Box>
         <Box>
             <Produto nome="Frango Catupiry" valor="23,00"/>
-            <Produto nome="Frango Catupiry" valor="23,00"/>
-            <Produto nome="Frango Catupiry" valor="23,00"/>
-            <Produto nome="Frango Catupiry" valor="23,00"/>
+            <Produto nome="Coca cola 2L" valor="10,00"/>
+            <Produto nome="Mouse de Cholate" valor="6,00"/>
         </Box>
         <Box marginTop={theme.spacing(10)} marginBottom={theme.spacing(24)}  width="100%" display="flex" justifyContent="center">
             <Box marginRight={theme.spacing(2)} marginTop={theme.spacing(1)}>

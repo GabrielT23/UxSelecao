@@ -6,7 +6,7 @@ export const Home = () => {
 
   const handleCardapioClick = () => {
     // Navegar para a rota '/carrinho' quando o botão for clicado
-    navigate("/carrinho/");
+    navigate("/carrinho/pizza");
   };
 
   return (

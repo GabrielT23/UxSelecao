@@ -22,20 +22,8 @@ export const LayoutCarrinho: React.FC<ILayoutCarrinhoprops> = ({children}) =>{
                         <HorizontalMenu/>
                     </Box>
                     <Box marginTop={theme.spacing(3)} display="flex">
-                        <Box width={theme.spacing(300)} display="flex" flexWrap="wrap">
-                          <CardProduto/>
-                          <CardProduto/>
-                          <CardProduto/>
-                          <CardProduto/>
-                          <CardProduto/>
-                          <CardProduto/>
-                          <CardProduto/>
-                          <CardProduto/>
-                          <CardProduto/>
-                          <CardProduto/>
-                          <CardProduto/>
-                          <CardProduto/>
-                         
+                        <Box width={theme.spacing(300)} display="flex" flexWrap="wrap" height="100%">
+                          {children}
 
                         </Box>
                         <Box width="100%" >
