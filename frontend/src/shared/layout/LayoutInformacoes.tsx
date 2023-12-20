@@ -34,9 +34,9 @@ export const LayoutInformacoes: React.FC<ILayoutInformacoesprops> = ({children, 
                     backgroundColor: 'rgba(96, 79, 79, 0.3)',
                     color: '#ffffff'
                 }}>
-                <Typography>
+                <Box>
                     {children}
-                </Typography>
+                </Box>
             </Box>
         </Box>
     );

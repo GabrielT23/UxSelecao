@@ -19,38 +19,10 @@ export const EnderecoForm = () => {
     userId: string;
   }
 
-  const [enderecoData, setEnderecoData] = useState({
-    bairro: "",
-    complemento: "",
-    cidade: "",
-    estado: "",
-    endereco: "",
-  });
-
-  const checkCep = async (event: React.FocusEvent<HTMLInputElement>) => {
-    const cep = event.target.value.replace(/\D/g, '');
-
-    try {
-      const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-      const data = await response.json();
-
-      // Atualiza o estado com os valores da API
-      setEnderecoData({
-        bairro: data.bairro,
-        complemento: data.complemento,
-        cidade: data.localidade,
-        estado: data.uf,
-        endereco: data.logradouro,
-      });
-    } catch (error) {
-      console.error("Erro ao obter dados do CEP:", error);
-    }
-  };
-
   const handleSave = (dados: IFormData) => {
     const userId = JSON.parse(localStorage.getItem('IdUser') as string);
     dados.numero = +dados.numero;
-    dados = { ...dados, userId, ...enderecoData };  // Adiciona os dados do endereço
+    dados = { ...dados, userId};  // Adiciona os dados do endereço
     EnderecoService.create(dados)
       .then((result) => {
         if (result instanceof Error) {
@@ -61,7 +33,7 @@ export const EnderecoForm = () => {
         }
       });
   }
-
+  
   return (
     <Form placeholder="Cadastro" onSubmit={handleSave}>
       <Box padding={4} marginTop={10} width={400} display="flex" flexDirection="column" component={Paper} variant="outlined" style={{ backgroundColor: "#ffffff" }} borderRadius={8}>
@@ -73,25 +45,25 @@ export const EnderecoForm = () => {
         </Typography>
         <Grid container direction="column" spacing={1} height="100%">
           <Grid item>
-            <VTextField onBlur={checkCep} size="small" fullWidth placeholder="cep" name="cep" />
+            <VTextField mask="cep" size="small" fullWidth placeholder="cep" name="cep" />
           </Grid>
           <Grid item>
-            <VTextField size="small" fullWidth placeholder="estado" name="estado" value={enderecoData.estado} />
+            <VTextField size="small" fullWidth placeholder="estado" name="estado" />
           </Grid>
           <Grid item>
-            <VTextField size="small" fullWidth placeholder="cidade" name="cidade" value={enderecoData.cidade} />
+            <VTextField size="small" fullWidth placeholder="cidade" name="cidade" />
           </Grid>
           <Grid item>
-            <VTextField size="small" fullWidth placeholder="bairro" name="bairro" value={enderecoData.bairro} />
+            <VTextField size="small" fullWidth placeholder="bairro" name="bairro" />
           </Grid>
           <Grid item>
             <VTextField size="small" fullWidth placeholder="numero" name="numero" />
           </Grid>
           <Grid item>
-            <VTextField size="small" fullWidth placeholder="complemento" name="complemento" value={enderecoData.complemento} />
+            <VTextField size="small" fullWidth placeholder="complemento" name="complemento"/>
           </Grid>
           <Grid item>
-            <VTextField size="small" fullWidth placeholder="endereco" name="endereco" value={enderecoData.endereco} />
+            <VTextField size="small" fullWidth placeholder="endereco" name="endereco"/>
           </Grid>
           <Grid item justifyContent="center" alignItems="center" display="flex">
             <Button type="submit" variant="contained" color="error">Enviar</Button>

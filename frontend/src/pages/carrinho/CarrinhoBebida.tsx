@@ -1,4 +1,3 @@
-import { Box, Typography } from "@mui/material";
 import { LayoutCarrinho } from "../../shared/layout";
 import { CardProduto } from "../../shared/components";
 

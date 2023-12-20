@@ -1,8 +1,6 @@
-import React from "react";
-import { Box, Button, Grid, Paper, TextField, Typography } from "@mui/material";
+import { Box, Button, Grid, Paper, Typography } from "@mui/material";
 import { Form } from "@unform/web";
 import { VTextField } from "./VTextField";
-import { UsersService } from "../../services/api";
 import { useNavigate } from "react-router-dom";
 import { AuthenticateService } from "../../services/api/users/AuthenticateService";
 import { Link as RouterLink } from "react-router-dom";

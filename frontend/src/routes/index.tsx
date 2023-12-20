@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import { useDrawerContext } from "../shared/contexts";
@@ -30,6 +29,7 @@ export const AppRoutes = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/contatos" element={<Contatos />} />
+        <Route path="*" element={<Navigate to="/app/home"/>}/>
       </Routes>
     );
   };

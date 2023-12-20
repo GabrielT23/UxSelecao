@@ -1,5 +1,4 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { Box } from "@mui/material";
 import { CarrinhoPizza } from "../pages";
 import { CarrinhoBebida } from "../pages/carrinho/CarrinhoBebida";
 import { CarrinhoPetisco } from "../pages/carrinho/CarrinhoPetisco";

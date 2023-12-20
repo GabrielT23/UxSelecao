@@ -1,5 +1,4 @@
-import React from "react";
-import { Box, Button, Grid, Paper, TextField, Typography } from "@mui/material";
+import { Box, Button, Grid, Paper, Typography } from "@mui/material";
 import { Form } from "@unform/web";
 import { VTextField } from "./VTextField";
 import { UsersService } from "../../services/api";
@@ -45,10 +44,10 @@ export const CadastroForm = () => {
             <VTextField size="small" fullWidth placeholder="password" name="password"/>
           </Grid>
           <Grid item>
-            <VTextField  size="small" fullWidth placeholder="Cpf" name="cpf"/>
+            <VTextField mask="cpf" size="small" fullWidth placeholder="Cpf" name="cpf"/>
           </Grid>
           <Grid item>
-            <VTextField size="small" fullWidth placeholder="Telefone" name="telefone"/>
+            <VTextField mask="telefone" size="small" fullWidth placeholder="Telefone" name="telefone"/>
           </Grid>
           <Grid item justifyContent="center" alignItems="center" display="flex">
             <Button type="submit" variant="contained" color="error">Enviar</Button>

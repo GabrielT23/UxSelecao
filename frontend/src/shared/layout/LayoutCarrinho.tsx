@@ -1,6 +1,6 @@
-import { AppBar, Box, Button, Icon, IconButton, Toolbar, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
-import { CardCarrinho, CardProduto, Footer, Header, HorizontalMenu } from "../components";
+import { CardCarrinho, Footer, Header, HorizontalMenu } from "../components";
 
 interface ILayoutCarrinhoprops {
     children?: React.ReactNode;
