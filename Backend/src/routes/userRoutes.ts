@@ -6,6 +6,7 @@ const userRoutes = Router();
 const controller = new UserController();
 
 userRoutes.post("/create", controller.create);
+userRoutes.use(ensureAuthenticate);
 userRoutes.get("/list", controller.list);
 userRoutes.get("/show/:id", controller.show);
 userRoutes.put("/update/:id", controller.update);
