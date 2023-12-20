@@ -9,25 +9,32 @@ import { AppRoutesCarrinho } from "./routes/carrinhoRoute";
 
 export const App = ()=> {
   return (
-    <Box  width="100%"
+    <Box
+      width="100%"
       height="100vh"
       style={{
-          backgroundImage: `url(${require("./img/imagemPizza.jpg")})` ,
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-      }}>
+        backgroundImage: `url(${require("./img/imagemPizza.jpg")})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
       <ThemeProvider theme={PrincipalTheme}>
         <DrawerProvider>
           <BrowserRouter>
-               {/* Routes principal que envolve todas as rotas da aplicação */}
-               <Routes>
-              {/* Rotas dentro do layout padrão com MenuLateral */}
-              <Route path="/app/*" element={<MenuLateral><AppRoutes /></MenuLateral>} />
-
-              {/* Rota específica sem MenuLateral */}
-              <Route path="/carrinho/*" element={<AppRoutesCarrinho />} />
-              <Route path="*" element={<Navigate to="/app/home"/>}/>
+            <Routes>
+              <Route
+                path="/app/*"
+                element={<MenuLateral><AppRoutes /></MenuLateral>}
+              />
+              <Route
+                path="/carrinho/*"
+                element={<AppRoutesCarrinho />}
+              />
+              <Route
+                path="*"
+                element={<Navigate to="/app/home" />}
+              />
             </Routes>
           </BrowserRouter>
         </DrawerProvider>

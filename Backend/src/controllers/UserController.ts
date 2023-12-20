@@ -32,25 +32,30 @@ public async show(request: Request, response: Response) {
         response = response.status(200).json(user);
 }
     public async create(request:Request, response: Response){
-        const bodySchema = Zod.object({
-            name: Zod.string(),
-            email: Zod.string().email(),
-            cpf: Zod.string(),
-            telefone: Zod.string(),
-            password: Zod.string().min(6),
-        }).strict();
-        const {name, email, cpf, telefone, password} = bodySchema.parse(request.body);
-        const password_hash = await hash(password, 6);
-        const user = await prismaC.user.create({
-           data: {
-               email,
-               "password": password_hash,
-               cpf,
-               name,
-               telefone
-           },
-        });
-        return response.status(200).json(user);
+        try {
+            const bodySchema = Zod.object({
+                name: Zod.string(),
+                email: Zod.string().email(),
+                cpf: Zod.string(),
+                telefone: Zod.string(),
+                password: Zod.string().min(6),
+            }).strict();
+            const { name, email, cpf, telefone, password } = bodySchema.parse(request.body);
+            const password_hash = await hash(password, 6);
+            const user = await prismaC.user.create({
+                data: {
+                    email,
+                    "password": password_hash,
+                    cpf,
+                    name,
+                    telefone
+                },
+            });
+            return response.status(200).json(user);
+        } catch (error) {
+            console.error(error); // Adicione esta linha para imprimir detalhes do erro no console do servidor
+            return response.status(500).json({ error: "Internal Server Error" });
+        }
     }
     public async update(request:Request, response: Response){
         const id = request.params.id;

@@ -38,7 +38,7 @@ Alguns dos endpoints oferecidos pela API:
 
 ## Autenticação
 
-A API utiliza autenticação por token. Para acessar os endpoints que requerem autenticação, é necessário enviar um token de acesso válido no header Authorization da requisição. O token pode ser obtido através do endpoint /sessions.
+A API utiliza autenticação por token. Para acessar os endpoints que requerem autenticação, é necessário enviar um token de acesso válido no header Authorization da requisição. O token pode ser obtido através do endpoint /authenticate.
 
 ## Licença
 

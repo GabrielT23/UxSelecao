@@ -6,3 +6,4 @@ export * from './carrinho/CardProduto';
 export * from './carrinho/CardCarrinho';
 export * from './formularios/CadastroForm';
 export * from './formularios/VTextField';
+export * from './formularios/EnderecoForm';

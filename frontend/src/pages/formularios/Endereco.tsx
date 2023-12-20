@@ -1,12 +1,12 @@
 import { Box, Typography } from "@mui/material";
 import { LayoutCarrinho, LayoutFormulario } from "../../shared/layout";
-import { CardProduto, CadastroForm } from "../../shared/components";
-import { LoginForm } from "../../shared/components/formularios/LoginForm";
+import { CardProduto, CadastroForm, EnderecoForm } from "../../shared/components";
 
-export const Login = ()=>{
+export const Endereco = ()=>{
+
     return(
         <LayoutFormulario>
-            <LoginForm/>
+            <EnderecoForm/>
         </LayoutFormulario>
     );
 }

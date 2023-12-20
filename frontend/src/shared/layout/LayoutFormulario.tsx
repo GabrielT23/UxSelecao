@@ -18,9 +18,7 @@ export const LayoutFormulario: React.FC<ILayoutFormularioprops> = ({children}) =
          }}>
             <Header />
                 <Box width="100%" display="flex" alignItems="center" justifyContent="center" height="100vh">
-                    <Box marginBottom={theme.spacing(30)} height="max-content"  style={{
-             backgroundColor: '#ffffff'
-         }}>
+                    <Box marginBottom={theme.spacing(30)} height="max-content">
                         {children}
                     </Box>
                 </Box>

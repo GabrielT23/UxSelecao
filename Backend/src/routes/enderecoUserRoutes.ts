@@ -4,12 +4,9 @@ import { ensureAuthenticate } from "../middlewares/ensureAuthenticate";
 
 const enderecoUserRoutes = Router();
 const controller = new EnderecoUserController();
-
-enderecoUserRoutes.use(ensureAuthenticate);
 enderecoUserRoutes.post("/create", controller.create);
 enderecoUserRoutes.get("/list", controller.list);
 enderecoUserRoutes.get("/show/:id", controller.show);
-enderecoUserRoutes.post("/create", controller.create);
 enderecoUserRoutes.put("/update/:id", controller.update);
 enderecoUserRoutes.delete("/delete/:id", controller.delete);
 export {enderecoUserRoutes}
