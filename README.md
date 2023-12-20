@@ -27,7 +27,7 @@ Na parte da interface, no frontend foi utilizado:
 para instalar as dependêcias. Após isso, execute `npm start` para iniciar a interface da aplicação
 - Execute o comando `cd Backend` para ir para entrar na pasta e em seguida `npm install` 
 para instalar as dependêcias.
-- Após subir o banco de dados com sucesso, execute `npx prisma migrate dev` para preparar o banco de dados.
+- Após subir o banco de dados com sucesso, execute `npx prisma generate` para preparar o banco de dados.
 - Após isso, execute `npm start` para iniciar a api da aplicação.
 
 ## Endpoints
