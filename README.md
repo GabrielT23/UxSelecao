@@ -31,10 +31,10 @@ Na parte da interface, no frontend foi utilizado:
 ## Instalação e configuração na sua máquina
 
 - Faça o clone deste repositório: `git clone`
-- Certifique-se de ter o Node.js 18.5 instalados em sua máquina.
-- Execute o comando `cd frontend` para ir para entrar na pasta e em seguida `npm install` 
+- Certifique-se de ter o Node.js 18.5 instalado na sua maquina.
+- Execute o comando `cd frontend` para entrar na pasta e em seguida `npm install` 
 para instalar as dependêcias. Após isso, execute `npm start` para iniciar a interface da aplicação
-- Execute o comando `cd Backend` para ir para entrar na pasta e em seguida `npm install` 
+- Execute o comando `cd Backend` para entrar na pasta e em seguida `npm install` 
 para instalar as dependêcias.
 - Execute `npx prisma generate` para preparar o banco de dados.
 - Após isso, execute `npm start` para iniciar a api da aplicação.
